@@ -1,3 +1,4 @@
+-- Add Employee
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
 ('Bryan', 'MC', 1, null),
@@ -5,10 +6,11 @@ VALUES
 ('Tom', 'Cruise', 5, 2),
 ('John', 'Doe', 4, null),
 ('Sam', 'Din', 6, null),
+('Emily', 'Ann', 78, 64),
 ('Shawn', 'Mendas', 8, null),
 ('James', 'Lau', 15, null);
 
--- add departments
+-- Add departments
 INSERT INTO department (department_name)
 VALUES
 ('Reception'),
@@ -18,7 +20,7 @@ VALUES
 ('Sales'),
 ('Marketing');
 
--- roles
+-- Add roles
 INSERT INTO role (title, salary, department_id)
 VALUES 
 ('Salesman', 80000, 2),
