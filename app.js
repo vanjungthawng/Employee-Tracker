@@ -55,3 +55,20 @@ const initStart = async () => {
     initStart();
   }
 };
+
+// View all of the employees
+const employeeView = async () => {
+  try {
+    let query = "SELECT * FROM employee";
+    connection.query(query, function (err, res) {
+      if (err) throw err;
+      let employeeResult = [];
+      res.forEach((employee) => employeeResult.push(employee));
+      console.table(employeeResult);
+      initStart();
+    });
+  } catch (err) {
+    console.log(err);
+    initStart();
+  }
+};
