@@ -8,6 +8,9 @@ VALUES
 ('Sam', 'Din', 6, null),
 ('Emily', 'Ann', 78, 64),
 ('Shawn', 'Mendas', 8, null),
+('Andrew', 'Biggin', 24, 29),
+('Scott', 'Tran', 65, null),
+('Liam', 'Graham', 72, null),
 ('James', 'Lau', 15, null);
 
 -- Add departments

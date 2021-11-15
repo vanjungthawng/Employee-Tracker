@@ -4,14 +4,14 @@ const util = require("util");
 const consoleTable = require("console.table");
 
 //import connection
-let connection = require("./config/connection");
-// let connection = mysql.createConnection({
-//   host: "localhost",
-//   port: 3306,
-//   user: "root",
-//   password: "vanRoot#21",
-//   database: "employee_DB",
-// });
+// let connection = require("./config/connection");
+let connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "vanRoot#21",
+  database: "employee_DB",
+});
 
 connection.query = util.promisify(connection.query);
 
@@ -122,7 +122,7 @@ const departmentAdd = async () => {
       {
         name: "deptName",
         type: "input",
-        message: "Enter a new department name!",
+        message: "Enter a new department name: ",
       },
     ]);
     let result = await connection.query("INSERT INTO department SET ?", {
@@ -145,12 +145,12 @@ const roleAdd = async () => {
       {
         name: "title",
         type: "input",
-        message: "Enter the new role name!",
+        message: "Enter the new role name: ",
       },
       {
         name: "salary",
         type: "input",
-        message: "Enter anual salary!",
+        message: "Enter anual salary: ",
       },
       {
         name: "departmentId",
@@ -161,7 +161,7 @@ const roleAdd = async () => {
             value: departmentId.id,
           };
         }),
-        message: "Enter department ID of this role associated!",
+        message: "Enter department ID of this role associated: ",
       },
     ]);
 
@@ -195,12 +195,12 @@ const employeeAdd = async () => {
       {
         name: "firstName",
         type: "input",
-        message: "Enter Employee First Name",
+        message: "Enter Employee First Name: ",
       },
       {
         name: "lastName",
         type: "input",
-        message: "Enter Employee Last Name",
+        message: "Enter Employee Last Name: ",
       },
       {
         name: "employeeRoleId",
@@ -211,7 +211,7 @@ const employeeAdd = async () => {
             value: role.id,
           };
         }),
-        message: "Employee's role id?",
+        message: "Employee's role id: ",
       },
       {
         name: "employeeManagerId",
@@ -222,7 +222,7 @@ const employeeAdd = async () => {
             value: manager.id,
           };
         }),
-        message: "Employee's Manager's Id?",
+        message: "Employee's Manager's Id!",
       },
     ]);
     let result = await connection.query("INSERT INTO employee SET ?", {
@@ -274,7 +274,7 @@ const employeeUpdate = async () => {
             value: roleName.id,
           };
         }),
-        message: "Select the role to update the employee with.",
+        message: "Select the role to update the employee with!",
       },
     ]);
 
